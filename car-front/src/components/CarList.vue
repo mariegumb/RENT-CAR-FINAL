@@ -2,7 +2,7 @@
 <div>
   <div class="grid grid-cols-4 gap-4">
   <div v-for="car in cars" :key="car.plateNumber">
-    <car :car="car"></car>
+    <car @refresh="getCars" :car="car"></car>
   </div>
 </div>
 </div>

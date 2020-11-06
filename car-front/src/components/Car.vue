@@ -11,7 +11,7 @@
       <button type="button" v-if="!car.rent" @click="rentCar" class="bg-blue-700 text-white hover:bg-blue-800 rounded px-2 py-1">
         Rent it now !
       </button>
-      <button type="button" v-else @click="rentCar" class="bg-blue-700 text-white hover:bg-blue-800 rounded px-2 py-1">
+      <button type="button" v-else @click="getBackCar" class="bg-pink-600 text-white hover:bg-blue-800 rounded px-2 py-1">
         Get back the car !
       </button>
     </div>
@@ -32,9 +32,11 @@ export default {
       endRent.setDate(endRent.getDate() + 7)
       const dates = {begin: beginRent.toISOString(), end: endRent.toISOString()}
       await axios.put('http://localhost:8080/cars/' + this.car.plateNumber, null, {params: dates})
+      this.$emit("refresh")
     },
     async getBackCar(){
-
+      await axios.delete('http://localhost:8080/cars/' + this.car.plateNumber)
+      this.$emit("refresh")
     }
   }
 }
