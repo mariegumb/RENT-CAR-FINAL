@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "vue-router": "^3.4.9",
     "core-js": "^3.6.5",
     "tailwindcss": "^1.9.6",
     "vue": "^2.6.11"

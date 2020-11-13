@@ -1,8 +1,8 @@
 <template>
 <div>
   <div class="grid grid-cols-4 gap-4">
-  <div v-for="car in cars" :key="car.plateNumber">
-    <car @refresh="getCars" :car="car"></car>
+  <div v-for="car in cars" :key="car.plateNumber"> <!-- boucle pour afficher les voitures -->
+    <car @refresh="getCars" :car="car"></car> <!-- composant responsable de car (refresh : pour refresh des qu'on fait une action dans car -->
   </div>
 </div>
 </div>

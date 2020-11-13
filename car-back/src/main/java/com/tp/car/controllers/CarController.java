@@ -19,11 +19,13 @@ public class CarController {
         Car car2 = new Car("DV-820-AZ", 2, "Porsche", (float) 47864);
         Car car3 = new Car("ER-223-TY", 7, "Lambo", (float) 22993);
         Car car4 = new Car("PT-563-UH", 5, "Lambo", (float) 22993);
+        Car car5 = new Car("GY-690-PD", 5, "Lambo", (float) 22993);
 
         this.carService.createCar(car1);
         this.carService.createCar(car2);
         this.carService.createCar(car3);
         this.carService.createCar(car4);
+        this.carService.createCar(car5);
     }
 
     @PostMapping("/cars")
@@ -54,8 +56,11 @@ public class CarController {
         carService.rent(plateNumber, dates);
     }
 
-    @DeleteMapping(value = "/cars/{plateNumber}")
+    @DeleteMapping(value = "/cars/getback/{plateNumber}")
     public void getBack(@PathVariable("plateNumber") String plateNumber){
         carService.getBack(plateNumber);
     }
+
+    @DeleteMapping(value = "/cars/{plateNumber}")
+    public void deleteCar(@PathVariable("plateNumber") String plateNumber) {carService.deleteCar(plateNumber);}
 }

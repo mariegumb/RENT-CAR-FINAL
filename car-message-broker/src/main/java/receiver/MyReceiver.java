@@ -9,7 +9,6 @@ public class MyReceiver {
 
 	public static void main(String[] args) {
 		try{
-			
 			//ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContextJMS.xml");
 			//QueueConnectionFactory factory = (QueueConnectionFactory) applicationContext.getBean("connectionFactory");
 			

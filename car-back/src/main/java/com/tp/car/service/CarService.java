@@ -72,4 +72,14 @@ public class CarService {
             throw new ResourceNotFoundException();
         }
     }
+
+    public void deleteCar(String plateNumber) {
+        if(this.carRepository.findByPlateNumber(plateNumber).isPresent()){
+            this.jmsService.sendMessageToQueue("Web client is deleting the car with plateNumber : " + plateNumber);
+            Car car = this.carRepository.findByPlateNumber(plateNumber).get();
+            this.carRepository.deleteById(car.getId());
+        } else {
+            throw new ResourceNotFoundException();
+        }
+    }
 }
