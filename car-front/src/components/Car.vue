@@ -11,7 +11,7 @@
       <button type="button" v-if="!car.rent" @click="rentCar" class="bg-blue-700 text-white hover:bg-blue-800 rounded px-2 py-1">
         Rent it now !
       </button>
-      <button type="button" v-else @click="getBackCar" class="bg-pink-600 text-white hover:bg-blue-800 rounded px-2 py-1">
+      <button type="button" v-else @click="getBackCar" class="bg-pink-600 text-white hover:bg-pink-800 rounded px-2 py-1">
         Get back the car !
       </button>
     </div>
